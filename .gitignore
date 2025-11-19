@@ -1,0 +1,46 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Generated files
+*.log
+*.pkl
+trajectories_*.pkl
+
+# Data files (images)
+*.JPEG
+*.jpeg
+*.JPG
+data/*.JPEG
+data/val.txt.backup
+
+# Results/Visualizations (can be regenerated)
+attack_results_plot.png
+attack_results_plot.pdf
+attack_trajectories.png
+attack_trajectories.pdf
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Custom images folder (users add their own)
+custom_images/*.jpg
+custom_images/*.jpeg
+custom_images/*.png
+custom_images/*.JPG
+custom_images/*.JPEG
+custom_images/*.PNG
+
+# Keep example structure
+!custom_images/.gitkeep
