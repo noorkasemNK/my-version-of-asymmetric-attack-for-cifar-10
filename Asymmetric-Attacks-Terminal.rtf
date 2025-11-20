@@ -1,0 +1,416 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2709
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fnil\fcharset0 Menlo-Regular;\f1\fnil\fcharset0 Menlo-Bold;}
+{\colortbl;\red255\green255\blue255;\red0\green0\blue0;\red108\green197\blue37;\red57\green192\blue38;
+\red202\green51\blue35;\red56\green185\blue199;\red86\green32\blue244;}
+{\*\expandedcolortbl;;\csgray\c0;\cssrgb\c48760\c79881\c18654;\cssrgb\c25706\c77963\c19557;
+\cssrgb\c83899\c28663\c18026;\cssrgb\c25546\c77007\c82023;\cssrgb\c41681\c25958\c96648;}
+\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\f0\fs22 \cf2 \CocoaLigature0 Last login: Tue Nov 18 11:26:38 on ttys002\
+noorkasem@Noors-MacBook-Air ~ %    python main.py --attack HSJA --save-trajectories --device "cpu" --total-cost 10000 --image-start 1 --image-end 6\
+zsh: command not found: python\
+noorkasem@Noors-MacBook-Air ~ %    python visualize_trajectories.py --attack HSJA --total-cost 10000 --query-cost 1.0\
+zsh: command not found: python\
+noorkasem@Noors-MacBook-Air ~ %    cd /Users/noorkasem/Desktop/Asymmetric-Attacks-main\
+noorkasem@Noors-MacBook-Air Asymmetric-Attacks-main %    python3 main.py --attack HSJA --save-trajectories --device "cpu" --total-cost 10000 --image-start 1 --image-end 6\
+Downloading: "https://download.pytorch.org/models/resnet50-0676ba61.pth" to /Users/noorkasem/.cache/torch/hub/checkpoints/resnet50-0676ba61.pth\
+Traceback (most recent call last):\
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/urllib/request.py", line 1348, in do_open\
+    h.request(req.get_method(), req.selector, req.data, headers,\
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/http/client.py", line 1286, in request\
+    self._send_request(method, url, body, headers, encode_chunked)\
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/http/client.py", line 1332, in _send_request\
+    self.endheaders(body, encode_chunked=encode_chunked)\
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/http/client.py", line 1281, in endheaders\
+    self._send_output(message_body, encode_chunked=encode_chunked)\
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/http/client.py", line 1041, in _send_output\
+    self.send(msg)\
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/http/client.py", line 979, in send\
+    self.connect()\
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/http/client.py", line 1458, in connect\
+    self.sock = self._context.wrap_socket(self.sock,\
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/ssl.py", line 517, in wrap_socket\
+    return self.sslsocket_class._create(\
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/ssl.py", line 1075, in _create\
+    self.do_handshake()\
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/ssl.py", line 1346, in do_handshake\
+    self._sslobj.do_handshake()\
+ssl.SSLCertVerificationError: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1002)\
+\
+During handling of the above exception, another exception occurred:\
+\
+Traceback (most recent call last):\
+  File "/Users/noorkasem/Desktop/Asymmetric-Attacks-main/main.py", line 11, in <module>\
+    model = ModelWrapper(model_utils.get_model(model_name=args.model).to(device=args.device), mean, std)\
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\
+  File "/Users/noorkasem/Desktop/Asymmetric-Attacks-main/src/models/utils.py", line 40, in get_model\
+    model = models.get_model(model_name, weights="IMAGENET1K_V1").eval()\
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/torchvision/models/_api.py", line 276, in get_model\
+    return fn(**config)\
+           ^^^^^^^^^^^^\
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/torchvision/models/_utils.py", line 142, in wrapper\
+    return fn(*args, **kwargs)\
+           ^^^^^^^^^^^^^^^^^^^\
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/torchvision/models/_utils.py", line 228, in inner_wrapper\
+    return builder(*args, **kwargs)\
+           ^^^^^^^^^^^^^^^^^^^^^^^^\
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/torchvision/models/resnet.py", line 763, in resnet50\
+    return _resnet(Bottleneck, [3, 4, 6, 3], weights, progress, **kwargs)\
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/torchvision/models/resnet.py", line 301, in _resnet\
+    model.load_state_dict(weights.get_state_dict(progress=progress, check_hash=True))\
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/torchvision/models/_api.py", line 90, in get_state_dict\
+    return load_state_dict_from_url(self.url, *args, **kwargs)\
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/torch/hub.py", line 871, in load_state_dict_from_url\
+    download_url_to_file(url, cached_file, hash_prefix, progress=progress)\
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/torch/hub.py", line 712, in download_url_to_file\
+    u = urlopen(req)\
+        ^^^^^^^^^^^^\
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/urllib/request.py", line 216, in urlopen\
+    return opener.open(url, data, timeout)\
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/urllib/request.py", line 519, in open\
+    response = self._open(req, data)\
+               ^^^^^^^^^^^^^^^^^^^^^\
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/urllib/request.py", line 536, in _open\
+    result = self._call_chain(self.handle_open, protocol, protocol +\
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/urllib/request.py", line 496, in _call_chain\
+    result = func(*args)\
+             ^^^^^^^^^^^\
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/urllib/request.py", line 1391, in https_open\
+    return self.do_open(http.client.HTTPSConnection, req,\
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/urllib/request.py", line 1351, in do_open\
+    raise URLError(err)\
+urllib.error.URLError: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1002)>\
+noorkasem@Noors-MacBook-Air Asymmetric-Attacks-main %    python3 visualize_trajectories.py --attack HSJA --total-cost 10000 --query-cost 1.0\
+Warning: trajectories_HSJA_10000.0_1.0_None_False_0.02.pkl not found for attack HSJA\
+noorkasem@Noors-MacBook-Air Asymmetric-Attacks-main % cd /Users/noorkasem/Desktop/Asymmetric-Attacks-main && python3 main.py --attack HSJA --save-trajectories --device "cpu" --total-cost 10000 --image-start 1 --image-end 6\
+Downloading: "https://download.pytorch.org/models/resnet50-0676ba61.pth" to /Users/noorkasem/.cache/torch/hub/checkpoints/resnet50-0676ba61.pth\
+Traceback (most recent call last):\
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/urllib/request.py", line 1348, in do_open\
+    h.request(req.get_method(), req.selector, req.data, headers,\
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/http/client.py", line 1286, in request\
+    self._send_request(method, url, body, headers, encode_chunked)\
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/http/client.py", line 1332, in _send_request\
+    self.endheaders(body, encode_chunked=encode_chunked)\
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/http/client.py", line 1281, in endheaders\
+    self._send_output(message_body, encode_chunked=encode_chunked)\
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/http/client.py", line 1041, in _send_output\
+    self.send(msg)\
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/http/client.py", line 979, in send\
+    self.connect()\
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/http/client.py", line 1458, in connect\
+    self.sock = self._context.wrap_socket(self.sock,\
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/ssl.py", line 517, in wrap_socket\
+    return self.sslsocket_class._create(\
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/ssl.py", line 1075, in _create\
+    self.do_handshake()\
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/ssl.py", line 1346, in do_handshake\
+    self._sslobj.do_handshake()\
+ssl.SSLCertVerificationError: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1002)\
+\
+During handling of the above exception, another exception occurred:\
+\
+Traceback (most recent call last):\
+  File "/Users/noorkasem/Desktop/Asymmetric-Attacks-main/main.py", line 11, in <module>\
+    model = ModelWrapper(model_utils.get_model(model_name=args.model).to(device=args.device), mean, std)\
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\
+  File "/Users/noorkasem/Desktop/Asymmetric-Attacks-main/src/models/utils.py", line 40, in get_model\
+    model = models.get_model(model_name, weights="IMAGENET1K_V1").eval()\
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/torchvision/models/_api.py", line 276, in get_model\
+    return fn(**config)\
+           ^^^^^^^^^^^^\
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/torchvision/models/_utils.py", line 142, in wrapper\
+    return fn(*args, **kwargs)\
+           ^^^^^^^^^^^^^^^^^^^\
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/torchvision/models/_utils.py", line 228, in inner_wrapper\
+    return builder(*args, **kwargs)\
+           ^^^^^^^^^^^^^^^^^^^^^^^^\
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/torchvision/models/resnet.py", line 763, in resnet50\
+    return _resnet(Bottleneck, [3, 4, 6, 3], weights, progress, **kwargs)\
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/torchvision/models/resnet.py", line 301, in _resnet\
+    model.load_state_dict(weights.get_state_dict(progress=progress, check_hash=True))\
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/torchvision/models/_api.py", line 90, in get_state_dict\
+    return load_state_dict_from_url(self.url, *args, **kwargs)\
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/torch/hub.py", line 871, in load_state_dict_from_url\
+    download_url_to_file(url, cached_file, hash_prefix, progress=progress)\
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/torch/hub.py", line 712, in download_url_to_file\
+    u = urlopen(req)\
+        ^^^^^^^^^^^^\
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/urllib/request.py", line 216, in urlopen\
+    return opener.open(url, data, timeout)\
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/urllib/request.py", line 519, in open\
+    response = self._open(req, data)\
+               ^^^^^^^^^^^^^^^^^^^^^\
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/urllib/request.py", line 536, in _open\
+    result = self._call_chain(self.handle_open, protocol, protocol +\
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/urllib/request.py", line 496, in _call_chain\
+    result = func(*args)\
+             ^^^^^^^^^^^\
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/urllib/request.py", line 1391, in https_open\
+    return self.do_open(http.client.HTTPSConnection, req,\
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/urllib/request.py", line 1351, in do_open\
+    raise URLError(err)\
+urllib.error.URLError: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1002)>\
+noorkasem@Noors-MacBook-Air Asymmetric-Attacks-main % cd /Users/noorkasem/Desktop/Asymmetric-Attacks-main\
+python3 main.py --attack HSJA --save-trajectories --device "cpu" --total-cost 10000 --image-start 1 --image-end 6\
+Downloading: "https://download.pytorch.org/models/resnet50-0676ba61.pth" to /Users/noorkasem/.cache/torch/hub/checkpoints/resnet50-0676ba61.pth\
+100%|\uc0\u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 | 97.8M/97.8M [00:17<00:00, 5.80MB/s]\
+Traceback (most recent call last):\
+  File "/Users/noorkasem/Desktop/Asymmetric-Attacks-main/main.py", line 12, in <module>\
+    attack = get_attack(args=args, model=model)\
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\
+  File "/Users/noorkasem/Desktop/Asymmetric-Attacks-main/utils/args.py", line 164, in get_attack\
+    return AsymmetricHSJA(model=model, total_cost=args.total_cost, query_cost=args.query_cost,\
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\
+TypeError: AsymmetricHSJA.__init__() got an unexpected keyword argument 'save_trajectories'\
+noorkasem@Noors-MacBook-Air Asymmetric-Attacks-main % # Option 1: Run the Python certificate installer (if available)\
+/Applications/Python\\ 3.11/Install\\ Certificates.command\
+zsh: unknown file attribute: i\
+ -- pip install --upgrade certifi\
+Requirement already satisfied: certifi in /Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages (2023.11.17)\
+Collecting certifi\
+  Downloading certifi-2025.11.12-py3-none-any.whl (159 kB)\
+     \cf3 \uc0\u9473 \u9473 \u9473 \u9473 \u9473 \u9473 \u9473 \u9473 \u9473 \u9473 \u9473 \u9473 \u9473 \u9473 \u9473 \u9473 \u9473 \u9473 \u9473 \u9473 \u9473 \u9473 \u9473 \u9473 \u9473 \u9473 \u9473 \u9473 \u9473 \u9473 \u9473 \u9473 \u9473 \u9473 \u9473 \u9473 \u9473 \u9473 \u9473 \u9473 \cf2  \cf4 159.4/159.4 kB\cf2  \cf5 5.2 MB/s\cf2  eta \cf6 0:00:00\cf2 \
+Installing collected packages: certifi\
+  Attempting uninstall: certifi\
+    Found existing installation: certifi 2023.11.17\
+    Uninstalling certifi-2023.11.17:\
+      Successfully uninstalled certifi-2023.11.17\
+Successfully installed certifi-2025.11.12\
+\
+
+\f1\b [
+\f0\b0 \cf7 notice
+\f1\b \cf2 ]
+\f0\b0  A new release of pip is available: \cf5 23.1.2\cf2  -> \cf4 25.3\cf2 \
+
+\f1\b [
+\f0\b0 \cf7 notice
+\f1\b \cf2 ]
+\f0\b0  To update, run: \cf4 pip3 install --upgrade pip\cf2 \
+ -- removing any existing file or link\
+ -- creating symlink to certifi certificate bundle\
+ -- setting permissions\
+ -- update complete\
+noorkasem@Noors-MacBook-Air Asymmetric-Attacks-main % pip3 install --upgrade certifi\
+Requirement already satisfied: certifi in /Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages (2025.11.12)\
+\
+
+\f1\b [
+\f0\b0 \cf7 notice
+\f1\b \cf2 ]
+\f0\b0  A new release of pip is available: \cf5 23.1.2\cf2  -> \cf4 25.3\cf2 \
+
+\f1\b [
+\f0\b0 \cf7 notice
+\f1\b \cf2 ]
+\f0\b0  To update, run: \cf4 pip3 install --upgrade pip\cf2 \
+noorkasem@Noors-MacBook-Air Asymmetric-Attacks-main % pip3 install --upgrade pip\
+Requirement already satisfied: pip in /Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages (23.1.2)\
+Collecting pip\
+  Using cached pip-25.3-py3-none-any.whl (1.8 MB)\
+Installing collected packages: pip\
+  Attempting uninstall: pip\
+    Found existing installation: pip 23.1.2\
+    Uninstalling pip-23.1.2:\
+      Successfully uninstalled pip-23.1.2\
+Successfully installed pip-25.3\
+noorkasem@Noors-MacBook-Air Asymmetric-Attacks-main % cd /Users/noorkasem/Desktop/Asymmetric-Attacks-main\
+python3 main.py --attack HSJA --save-trajectories --device "cpu" --total-cost 10000 --image-start 1 --image-end 6\
+Traceback (most recent call last):\
+  File "/Users/noorkasem/Desktop/Asymmetric-Attacks-main/main.py", line 12, in <module>\
+    attack = get_attack(args=args, model=model)\
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\
+  File "/Users/noorkasem/Desktop/Asymmetric-Attacks-main/utils/args.py", line 164, in get_attack\
+    return AsymmetricHSJA(model=model, total_cost=args.total_cost, query_cost=args.query_cost,\
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\
+TypeError: AsymmetricHSJA.__init__() got an unexpected keyword argument 'save_trajectories'\
+noorkasem@Noors-MacBook-Air Asymmetric-Attacks-main % cd /Users/noorkasem/Desktop/Asymmetric-Attacks-main\
+python3 main.py --attack HSJA --save-trajectories --device "cpu" --total-cost 10000 --image-start 1 --image-end 6\
+Running The Attack:   0%|                                                                            | 0/5 [00:00<?, ?it/s]\
+Traceback (most recent call last):\
+  File "/Users/noorkasem/Desktop/Asymmetric-Attacks-main/main.py", line 20, in <module>\
+    image = model_utils.preprocess(open_image(source_image=image_path), mean=model.mean, std=model.std, model_name=args.model).to(args.device)\
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\
+  File "/Users/noorkasem/Desktop/Asymmetric-Attacks-main/utils/data.py", line 10, in open_image\
+    return Image.open(source_image).convert('RGB')\
+           ^^^^^^^^^^^^^^^^^^^^^^^^\
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/PIL/Image.py", line 3513, in open\
+    fp = builtins.open(filename, "rb")\
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\
+FileNotFoundError: [Errno 2] No such file or directory: 'data/ILSVRC2012_val_00000001.JPEG'\
+noorkasem@Noors-MacBook-Air Asymmetric-Attacks-main % cd /Users/noorkasem/Desktop/Asymmetric-Attacks-main\
+mkdir custom_images\
+noorkasem@Noors-MacBook-Air Asymmetric-Attacks-main % python3 setup_custom_images.py\
+============================================================\
+Custom Images Setup for Asymmetric Attacks\
+============================================================\
+Looking for images in: custom_images/\
+\
+Checking for expected image files:\
+  \uc0\u10003  Found: redbull.jpg\
+  \uc0\u10003  Found: lemon.jpg\
+  \uc0\u10003  Found: soccer_ball.png\
+  \uc0\u10003  Found: orange_pen.png\
+\
+\uc0\u55357 \u56523  Setting up images in data/...\
+  \uc0\u10003  Saved: redbull.jpg -> data/ILSVRC2012_val_00000001.JPEG\
+  \uc0\u10003  Saved: lemon.jpg -> data/ILSVRC2012_val_00000002.JPEG\
+  \uc0\u10003  Saved: soccer_ball.png -> data/ILSVRC2012_val_00000003.JPEG\
+  \uc0\u10003  Saved: orange_pen.png -> data/ILSVRC2012_val_00000004.JPEG\
+\
+  \uc0\u8505 \u65039   Backed up existing val.txt to data/val.txt.backup\
+\
+  \uc0\u10003  Created data/val.txt with 4 entries\
+\
+\uc0\u9989  Setup complete! 4 images ready for attacks.\
+\
+Now you can run:\
+  python3 main.py --attack HSJA --save-trajectories --device cpu --total-cost 10000 --image-start 1 --image-end 5\
+noorkasem@Noors-MacBook-Air Asymmetric-Attacks-main % python3 main.py --attack HSJA --save-trajectories --device cpu --total-cost 10000 --image-start 1 --image-end 6\
+Running The Attack:  60%|\uc0\u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9610                            | 3/5 [00:00<00:00, 11.70it/s]\
+Warning: Image file not found: data/ILSVRC2012_val_00000005.JPEG\
+Please make sure ImageNet validation images are in the data directory.\
+Running The Attack: 100%|\uc0\u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 | 5/5 [00:00<00:00, 14.50it/s]\
+noorkasem@Noors-MacBook-Air Asymmetric-Attacks-main % python3 visualize_trajectories.py --attack HSJA --total-cost 10000 --query-cost 1.0\
+Warning: trajectories_HSJA_10000.0_1.0_None_False_0.02.pkl not found for attack HSJA\
+noorkasem@Noors-MacBook-Air Asymmetric-Attacks-main % python3 setup_custom_images.py\
+============================================================\
+Custom Images Setup for Asymmetric Attacks\
+============================================================\
+Looking for images in: custom_images/\
+\
+Checking for expected image files:\
+  \uc0\u10003  Found: redbull.jpg\
+  \uc0\u10003  Found: lemon.jpg\
+  \uc0\u10003  Found: banana_split.png\
+  \uc0\u10003  Found: soccer_ball.png\
+  \uc0\u10003  Found: orange_pen.png\
+\
+\uc0\u55357 \u56523  Setting up images in data/...\
+  \uc0\u10003  Saved: redbull.jpg -> data/ILSVRC2012_val_00000001.JPEG\
+  \uc0\u10003  Saved: lemon.jpg -> data/ILSVRC2012_val_00000002.JPEG\
+  \uc0\u10003  Saved: banana_split.png -> data/ILSVRC2012_val_00000003.JPEG\
+  \uc0\u10003  Saved: soccer_ball.png -> data/ILSVRC2012_val_00000004.JPEG\
+  \uc0\u10003  Saved: orange_pen.png -> data/ILSVRC2012_val_00000005.JPEG\
+\
+  \uc0\u8505 \u65039   Backed up existing val.txt to data/val.txt.backup\
+\
+  \uc0\u10003  Created data/val.txt with 5 entries\
+\
+\uc0\u9989  Setup complete! 5 images ready for attacks.\
+\
+Now you can run:\
+  python3 main.py --attack HSJA --save-trajectories --device cpu --total-cost 10000 --image-start 1 --image-end 6\
+noorkasem@Noors-MacBook-Air Asymmetric-Attacks-main % python3 main.py --attack HSJA --save-trajectories --device cpu --total-cost 10000 --image-start 1 --image-end 6\
+Running The Attack: 100%|\uc0\u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 | 5/5 [00:00<00:00, 14.54it/s]\
+noorkasem@Noors-MacBook-Air Asymmetric-Attacks-main % python3 visualize_trajectories.py --attack HSJA --total-cost 10000 --query-cost 1.0\
+Warning: trajectories_HSJA_10000.0_1.0_None_False_0.02.pkl not found for attack HSJA\
+noorkasem@Noors-MacBook-Air Asymmetric-Attacks-main % python3 main.py --attack HSJA --save-trajectories --device cpu --total-cost 10000 --image-start 1 --image-end 6\
+Running The Attack:   0%|                                                                                                      | 0/5 [00:00<?, ?it/s]\
+Note: Image ILSVRC2012_val_00000001.JPEG predicted as 585 but label file says 1\
+  Using predicted label 585 for attack\
+Running The Attack:   0%|                                                                                                      | 0/5 [36:50<?, ?it/s]\
+Traceback (most recent call last):\
+  File "/Users/noorkasem/Desktop/Asymmetric-Attacks-main/main.py", line 59, in <module>\
+    img_pil = model_utils.postprocess(img_tensor, mean=model.mean, std=model.std, squeeze=True)\
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\
+  File "/Users/noorkasem/Desktop/Asymmetric-Attacks-main/src/models/utils.py", line 38, in postprocess\
+    image = ((image * std) + mean)\
+              ~~~~~~^~~~~\
+TypeError: unsupported operand type(s) for *: 'numpy.ndarray' and 'Tensor'\
+noorkasem@Noors-MacBook-Air Asymmetric-Attacks-main % python3 visualize_trajectories.py --attack HSJA --total-cost 10000 --query-cost 1.0\
+Warning: trajectories_HSJA_10000.0_1.0_None_False_0.02.pkl not found for attack HSJA\
+noorkasem@Noors-MacBook-Air Asymmetric-Attacks-main % python3 main.py --attack HSJA --save-trajectories --device cpu --total-cost 1000 --image-start 1 --image-end 6\
+Running The Attack:   0%|                                                                                                      | 0/5 [00:00<?, ?it/s]\
+Note: Image ILSVRC2012_val_00000001.JPEG predicted as 585 but label file says 1\
+  Using predicted label 585 for attack\
+  \uc0\u10003  Saved trajectory for ILSVRC2012_val_00000001.JPEG (8 stages)\
+Running The Attack:  20%|\uc0\u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9612                                                                           | 1/5 [02:54<11:39, 174.96s/it]\
+Note: Image ILSVRC2012_val_00000002.JPEG predicted as 951 but label file says 1\
+  Using predicted label 951 for attack\
+  \uc0\u10003  Saved trajectory for ILSVRC2012_val_00000002.JPEG (8 stages)\
+Running The Attack:  40%|\uc0\u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9615                                                        | 2/5 [06:56<10:42, 214.20s/it]\
+Note: Image ILSVRC2012_val_00000003.JPEG predicted as 923 but label file says 1\
+  Using predicted label 923 for attack\
+  \uc0\u10003  Saved trajectory for ILSVRC2012_val_00000003.JPEG (8 stages)\
+Running The Attack:  60%|\uc0\u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9610                                      | 3/5 [10:42<07:19, 219.73s/it]\
+Note: Image ILSVRC2012_val_00000004.JPEG predicted as 805 but label file says 1\
+  Using predicted label 805 for attack\
+  \uc0\u10003  Saved trajectory for ILSVRC2012_val_00000004.JPEG (8 stages)\
+Running The Attack:  80%|\uc0\u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9613                   | 4/5 [13:49<03:26, 206.57s/it]\
+Note: Image ILSVRC2012_val_00000005.JPEG predicted as 418 but label file says 1\
+  Using predicted label 418 for attack\
+  \uc0\u10003  Saved trajectory for ILSVRC2012_val_00000005.JPEG (8 stages)\
+Running The Attack: 100%|\uc0\u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 \u9608 | 5/5 [16:54<00:00, 202.88s/it]\
+\
+\uc0\u9989  Trajectories saved to: trajectories_HSJA_1000.0_1.0_None_False_0.02.pkl\
+noorkasem@Noors-MacBook-Air Asymmetric-Attacks-main % python3 visualize_trajectories.py --attack HSJA --total-cost 1000 --query-cost 1.0\
+Loaded 5 trajectories from HSJA\
+Visualization saved to: attack_trajectories.png\
+Visualization saved to: attack_trajectories.pdf\
+noorkasem@Noors-MacBook-Air Asymmetric-Attacks-main % cd /Users/noorkasem/Desktop/Asymmetric-Attacks-main\
+git push -u origin main\
+Username for 'https://github.com': noorkasemNK\
+Password for 'https://noorkasemNK@github.com': \
+remote: Invalid username or token. Password authentication is not supported for Git operations.\
+fatal: Authentication failed for 'https://github.com/noorkasemNK/my-version-of-asymmetric-attack-for-cifar-10.git/'\
+noorkasem@Noors-MacBook-Air Asymmetric-Attacks-main % cd /Users/noorkasem/Desktop/Asymmetric-Attacks-main\
+git push -u origin main\
+\
+Username for 'https://github.com': noorkasemNK\
+Password for 'https://noorkasemNK@github.com': \
+remote: Invalid username or token. Password authentication is not supported for Git operations.\
+fatal: Authentication failed for 'https://github.com/noorkasemNK/my-version-of-asymmetric-attack-for-cifar-10.git/'\
+noorkasem@Noors-MacBook-Air Asymmetric-Attacks-main % cd /Users/noorkasem/Desktop/Asymmetric-Attacks-main\
+git push -u origin main\
+Username for 'https://github.com': noorkasemNK\
+Password for 'https://noorkasemNK@github.com': \
+remote: Permission to noorkasemNK/my-version-of-asymmetric-attack-for-cifar-10.git denied to noorkasemNK.\
+fatal: unable to access 'https://github.com/noorkasemNK/my-version-of-asymmetric-attack-for-cifar-10.git/': The requested URL returned error: 403\
+noorkasem@Noors-MacBook-Air Asymmetric-Attacks-main % cd /Users/noorkasem/Desktop/Asymmetric-Attacks-main\
+git push -u origin main\
+\
+Username for 'https://github.com': noorkasemNK\
+Password for 'https://noorkasemNK@github.com': \
+fatal: unable to access 'https://github.com/noorkasemNK/my-version-of-asymmetric-attack-for-cifar-10.git/': Could not resolve host: github.com\
+noorkasem@Noors-MacBook-Air Asymmetric-Attacks-main % gh auth login\
+git push -u origin main\
+zsh: command not found: gh\
+fatal: unable to access 'https://github.com/noorkasemNK/my-version-of-asymmetric-attack-for-cifar-10.git/': Could not resolve host: github.com\
+noorkasem@Noors-MacBook-Air Asymmetric-Attacks-main % cd /Users/noorkasem/Desktop/Asymmetric-Attacks-main\
+git push -u origin main\
+\
+\
+Username for 'https://github.com': noorkasemNK\
+Password for 'https://noorkasemNK@github.com': \
+Enumerating objects: 29, done.\
+Counting objects: 100% (29/29), done.\
+Delta compression using up to 8 threads\
+Compressing objects: 100% (26/26), done.\
+Writing objects: 100% (29/29), 24.40 KiB | 8.13 MiB/s, done.\
+Total 29 (delta 3), reused 0 (delta 0), pack-reused 0\
+remote: Resolving deltas: 100% (3/3), done.\
+To https://github.com/noorkasemNK/my-version-of-asymmetric-attack-for-cifar-10.git\
+ * [new branch]      main -> main\
+branch 'main' set up to track 'origin/main'.\
+noorkasem@Noors-MacBook-Air Asymmetric-Attacks-main % \
+}
